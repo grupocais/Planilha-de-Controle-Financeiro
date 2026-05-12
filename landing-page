@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Planilha Gratuita | CAIS Investimentos</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+:root{
+--bg:#03101d;
+--card:#082844;
+--gold:#d9bd7e;
+--white:#ffffff;
+--text:#b8c6d3;
+}
+
+body{
+font-family:'Outfit',sans-serif;
+background:var(--bg);
+color:var(--white);
+overflow-x:hidden;
+}
+
+.container{
+width:100%;
+max-width:1400px;
+margin:auto;
+padding:0 40px;
+}
+
+nav{
+padding:28px 0;
+border-bottom:1px solid rgba(255,255,255,0.06);
+}
+
+.logo{
+height:56px;
+}
+
+.hero{
+padding:90px 0;
+display:grid;
+grid-template-columns:1.1fr 0.9fr;
+gap:70px;
+align-items:center;
+min-height:85vh;
+}
+
+.left h1{
+font-size:72px;
+line-height:1;
+font-weight:600;
+margin-bottom:24px;
+letter-spacing:-3px;
+}
+
+.left h1 span{
+display:block;
+font-style:italic;
+font-weight:300;
+color:var(--gold);
+margin-top:10px;
+}
+
+.left p{
+font-size:22px;
+line-height:1.7;
+color:var(--text);
+max-width:650px;
+margin-bottom:50px;
+}
+
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:18px 34px;
+background:var(--gold);
+color:#03101d;
+text-decoration:none;
+font-weight:600;
+border-radius:18px;
+transition:0.25s;
+font-size:15px;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+opacity:0.9;
+}
+
+.cards{
+display:flex;
+flex-direction:column;
+gap:24px;
+}
+
+.card{
+background:var(--card);
+border-radius:26px;
+padding:38px;
+display:flex;
+gap:30px;
+align-items:flex-start;
+border:1px solid rgba(255,255,255,0.04);
+}
+
+.number{
+font-size:72px;
+font-weight:200;
+color:var(--gold);
+line-height:1;
+min-width:90px;
+}
+
+.card h3{
+font-size:34px;
+margin-bottom:10px;
+font-weight:500;
+}
+
+.card p{
+font-size:19px;
+line-height:1.7;
+color:var(--text);
+}
+
+.form-section{
+padding:90px 0 120px;
+}
+
+.form-box{
+background:#071d31;
+padding:50px;
+border-radius:30px;
+max-width:820px;
+margin:auto;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.form-box h2{
+font-size:48px;
+margin-bottom:14px;
+}
+
+.form-box h2 span{
+color:var(--gold);
+font-style:italic;
+font-weight:300;
+}
+
+.form-box p{
+font-size:18px;
+line-height:1.7;
+color:var(--text);
+margin-bottom:40px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.field{
+display:flex;
+flex-direction:column;
+margin-bottom:20px;
+}
+
+.field.full{
+grid-column:1/-1;
+}
+
+label{
+font-size:13px;
+margin-bottom:10px;
+letter-spacing:0.08em;
+text-transform:uppercase;
+color:#9fb2c3;
+}
+
+input,
+select{
+height:56px;
+background:#0b2a45;
+border:none;
+border-radius:14px;
+padding:0 18px;
+font-family:'Outfit',sans-serif;
+color:white;
+font-size:16px;
+outline:none;
+}
+
+select{
+appearance:none;
+}
+
+button{
+border:none;
+cursor:pointer;
+font-family:'Outfit',sans-serif;
+}
+
+.submit{
+width:100%;
+height:60px;
+border-radius:16px;
+background:var(--gold);
+font-size:15px;
+font-weight:600;
+margin-top:12px;
+}
+
+footer{
+padding:35px 0;
+border-top:1px solid rgba(255,255,255,0.06);
+text-align:center;
+color:#7f93a5;
+font-size:14px;
+}
+
+@media(max-width:980px){
+
+.hero{
+grid-template-columns:1fr;
+}
+
+.left h1{
+font-size:54px;
+}
+
+.card h3{
+font-size:28px;
+}
+
+}
+
+@media(max-width:700px){
+
+.container{
+padding:0 22px;
+}
+
+.hero{
+padding:60px 0;
+gap:40px;
+}
+
+.left h1{
+font-size:42px;
+}
+
+.left p{
+font-size:18px;
+}
+
+.card{
+padding:28px;
+}
+
+.number{
+font-size:52px;
+min-width:60px;
+}
+
+.card h3{
+font-size:22px;
+}
+
+.card p{
+font-size:16px;
+}
+
+.form-box{
+padding:30px;
+}
+
+.form-box h2{
+font-size:34px;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="container">
+<img src="logo.png" class="logo">
+</div>
+</nav>
+
+<section class="hero">
+<div class="container hero">
+
+<div class="left">
+
+<h1>
+Sua direção financeira
+<span>começa aqui</span>
+</h1>
+
+<p>
+Você já controla. Agora vamos fazer seu dinheiro render.
+Baixe gratuitamente a planilha financeira desenvolvida pela CAIS Investimentos.
+</p>
+
+<a href="#formulario" class="btn">
+BAIXAR PLANILHA GRATUITA
+</a>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+<div class="number">01</div>
+<div>
+<h3>Lance suas entradas</h3>
+<p>
+Salário, renda extra, aluguéis.
+Tudo o que entra na sua conta no mês.
+</p>
+</div>
+</div>
+
+<div class="card">
+<div class="number">02</div>
+<div>
+<h3>Registre suas saídas</h3>
+<p>
+Despesas organizadas em categorias claras.
+Sem se perder em subitens.
+</p>
+</div>
+</div>
+
+<div class="card">
+<div class="number">03</div>
+<div>
+<h3>Veja seu painel</h3>
+<p>
+Descubra quanto sobrou e simule quanto pode virar patrimônio nos próximos anos.
+</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="form-section" id="formulario">
+
+<div class="container">
+
+<div class="form-box">
+
+<h2>
+Receba sua <span>planilha gratuita</span>
+</h2>
+
+<p>
+Preencha os dados abaixo para liberar o acesso imediato ao download.
+</p>
+
+<form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Das000006BB37" method="POST">
+
+<input type="hidden" name="oid" value="00Das000006BB37">
+<input type="hidden" name="retURL" value="https://SEUUSUARIO.github.io/obrigado.html">
+
+<div class="grid">
+
+<div class="field">
+<label>Nome</label>
+<input type="text" name="first_name" required>
+</div>
+
+<div class="field">
+<label>Sobrenome</label>
+<input type="text" name="last_name" required>
+</div>
+
+<div class="field full">
+<label>WhatsApp</label>
+<input type="tel" name="phone" required>
+</div>
+
+<div class="field full">
+<label>E-mail</label>
+<input type="email" name="email" required>
+</div>
+
+<div class="field full">
+<label>Qual sua relação com investimentos?</label>
+
+<select name="00N_RELACAO_INVESTIMENTOS" required>
+<option value="">Selecione</option>
+<option>Nunca investi e não entendo nada</option>
+<option>Nunca investi mas entendo um pouco</option>
+<option>Já investi algumas vezes</option>
+<option>Já invisto e entendo do assunto</option>
+</select>
+
+</div>
+
+<div class="field full">
+<label>Quanto você possui para investir?</label>
+
+<select name="00N_CAPITAL_DISPONIVEL" required>
+<option value="">Selecione</option>
+<option>Até R$ 50 mil</option>
+<option>R$ 50 mil a R$ 100 mil</option>
+<option>R$ 100 mil a R$ 300 mil</option>
+<option>Acima de R$ 300 mil</option>
+</select>
+
+</div>
+
+</div>
+
+<button class="submit" type="submit">
+ACESSAR PLANILHA
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<div class="container">
+© 2026 CAIS Investimentos. Todos os direitos reservados.
+</div>
+</footer>
+
+</body>
+</html>
