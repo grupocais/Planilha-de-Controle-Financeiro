@@ -9,28 +9,20 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<script>
-
-window.addEventListener('load', function(){
-
-setTimeout(function(){
-
-const link = document.createElement('a');
-
-link.href='https://docs.google.com/spreadsheets/d/16IczNkAUl4fq19RQTq2nZcc8fnXMEsHa/edit?usp=sharing&ouid=110191963342426212057&rtpof=true&sd=true';
-
-link.download='Cais_Investimentos_Planilha-de-Controle-Financeiro.xlsx';
-
-document.body.appendChild(link);
-
-link.click();
-
-document.body.removeChild(link);
-
-},1000);
-
-});
-
+  <!-- Download automático da planilha ao entrar na página -->
+  
+  <script>
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        var link = document.createElement('a');
+        link.href = 'https://docs.google.com/spreadsheets/d/16IczNkAUl4fq19RQTq2nZcc8fnXMEsHa/edit?usp=drive_link&ouid=110191963342426212057&rtpof=true&sd=true';
+        link.download = 'Cais_Investimentos_Planilha-de-Controle-Financeiro.xlsx';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }, 800);
+    });\
+    
 </script>
 
 <style>
