@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Planilha Gratuita | CAIS Investimentos</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg:   #03101d;
+  --card: #082844;
+  --gold: #d9bd7e;
+  --white: #ffffff;
+  --text: #b8c6d3;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+nav {
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.logo {
+  height: 52px;
+  display: block;
+}
+
+.hero {
+  padding: 80px 0;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 64px;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.left h1 {
+  font-size: 64px;
+  line-height: 1.05;
+  font-weight: 600;
+  margin-bottom: 24px;
+  letter-spacing: -2px;
+}
+
+.left h1 span {
+  display: block;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gold);
+  margin-top: 8px;
+}
+
+.left p {
+  font-size: 20px;
+  line-height: 1.7;
+  color: var(--text);
+  max-width: 560px;
+  margin-bottom: 44px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  min-width: 240px;
+  background: var(--gold);
+  color: #03101d;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 12px;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.88;
+  transform: translateY(-2px);
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 32px 36px;
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.number {
+  font-size: 60px;
+  font-weight: 200;
+  color: var(--gold);
+  line-height: 1;
+  min-width: 72px;
+}
+
+.card h3 {
+  font-size: 28px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.card p {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+.form-section {
+  padding: 80px 0 100px;
+}
+
+.form-box {
+  background: #071d31;
+  padding: 48px 52px;
+  border-radius: 24px;
+  max-width: 760px;
+  margin: 0 auto;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.form-box h2 {
+  font-size: 42px;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.form-box h2 span {
+  color: var(--gold);
+  font-style: italic;
+  font-weight: 300;
+}
+
+.form-box > p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 36px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+label {
+  font-size: 12px;
+  margin-bottom: 8px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #9fb2c3;
+}
+
+input,
+select {
+  height: 52px;
+  background: #0b2a45;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 0 16px;
+  font-family: 'Outfit', sans-serif;
+  color: white;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input:focus,
+select:focus {
+  border-color: rgba(217,189,126,0.5);
+}
+
+input::placeholder {
+  color: rgba(255,255,255,0.2);
+}
+
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23d9bd7e' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+select option {
+  background: #071d31;
+}
+
+.submit {
+  width: 100%;
+  height: 56px;
+  border-radius: 12px;
+  background: var(--gold);
+  color: #03101d;
+  border: none;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 24px;
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.submit:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+footer {
+  padding: 32px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
+  color: #7f93a5;
+  font-size: 13px;
+}
+
+@media (max-width: 980px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    min-height: unset;
+    gap: 48px;
+  }
+  .left h1 { font-size: 52px; }
+  .cards { max-width: 600px; }
+}
+
+@media (max-width: 700px) {
+  .container { padding: 0 20px; }
+  .hero { padding: 52px 0; }
+  .hero-inner { gap: 36px; }
+  .left h1 { font-size: 38px; letter-spacing: -1px; }
+  .left p { font-size: 16px; margin-bottom: 32px; }
+  .btn { width: 100%; min-width: unset; }
+  .card { padding: 24px 22px; gap: 20px; }
+  .number { font-size: 48px; min-width: 56px; }
+  .card h3 { font-size: 20px; }
+  .card p { font-size: 15px; }
+  .form-section { padding: 52px 0 72px; }
+  .form-box { padding: 28px 22px; border-radius: 18px; }
+  .form-box h2 { font-size: 30px; }
+  .form-box > p { font-size: 15px; margin-bottom: 28px; }
+  .grid { grid-template-columns: 1fr; }
+  .field.full { grid-column: unset; }
+  .submit { height: 52px; font-size: 13px; }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="container">
+    <img src="logo-endossada-cais-necton.png" class="logo" alt="CAIS Investimentos">
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+
+      <div class="left">
+        <h1>
+          Sua direção financeira
+          <span>começa aqui</span>
+        </h1>
+        <p>
+          Você já controla. Agora vamos fazer seu dinheiro render.
+          Baixe gratuitamente a planilha financeira desenvolvida pela CAIS Investimentos.
+        </p>
+        <a href="#formulario" class="btn">Baixar planilha gratuita</a>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="number">01</div>
+          <div>
+            <h3>Lance suas entradas</h3>
+            <p>Salário, renda extra, aluguéis. Tudo o que entra na sua conta no mês.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="number">02</div>
+          <div>
+            <h3>Registre suas saídas</h3>
+            <p>Despesas organizadas em categorias claras. Sem se perder em subitens.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="number">03</div>
+          <div>
+            <h3>Veja seu painel</h3>
+            <p>Descubra quanto sobrou e simule quanto pode virar patrimônio nos próximos anos.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="form-section" id="formulario">
+  <div class="container">
+    <div class="form-box">
+
+      <h2>Receba sua <span>planilha gratuita</span></h2>
+      <p>Preencha os dados abaixo para liberar o acesso imediato ao download.</p>
+
+      <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Das000006BB37" method="POST">
+
+        <input type="hidden" name="oid"    value="00Das000006BB37" />
+        <!--
+          retURL: após enviar o formulário, o Salesforce redireciona
+          direto para o download da planilha no Google Drive.
+        -->
+        <input type="hidden" name="retURL" value="https://docs.google.com/spreadsheets/d/16IczNkAUl4fq19RQTq2nZcc8fnXMEsHa/export?format=xlsx" />
+        <input type="hidden" name="lead_source" value="Web – Planilha de Controle Financeiro" />
+
+        <div class="grid">
+
+          <div class="field">
+            <label>Nome</label>
+            <input type="text" id="first_name" name="first_name" maxlength="40" placeholder="Ana" required>
+          </div>
+
+          <div class="field">
+            <label>Sobrenome</label>
+            <input type="text" id="last_name" name="last_name" maxlength="80" placeholder="Silva" required>
+          </div>
+
+          <div class="field full">
+            <label>WhatsApp com DDD</label>
+            <input type="tel" id="phone" name="phone" maxlength="40" placeholder="(27) 99999-9999" required>
+          </div>
+
+          <div class="field full">
+            <label>E-mail</label>
+            <input type="email" id="email" name="email" maxlength="80" placeholder="ana@email.com" required>
+          </div>
+
+          <!-- ID real gerado pelo Salesforce: 00NU600000MAbhr -->
+          <div class="field full">
+            <label>Qual sua relação com investimentos?</label>
+            <select id="00NU600000MAbhr" name="00NU600000MAbhr" required>
+              <option value="">Selecione uma opção</option>
+              <option value="Nunca investi e nao entendo nada">Nunca investi e não entendo nada do assunto</option>
+              <option value="Nunca investi mas entendo um pouco">Nunca investi, mas entendo um pouco</option>
+              <option value="Ja investi algumas vezes">Já investi algumas vezes</option>
+              <option value="Ja invisto e entendo do assunto">Já invisto e entendo do assunto</option>
+            </select>
+          </div>
+
+          <!-- ID real gerado pelo Salesforce: 00NU600000MBKJp -->
+          <div class="field full">
+            <label>Quanto você possui para investir?</label>
+            <select id="00NU600000MBKJp" name="00NU600000MBKJp" required>
+              <option value="">Selecione uma faixa</option>
+              <option value="Ate 50k">Até R$ 50 mil</option>
+              <option value="50k a 100k">R$ 50 mil a R$ 100 mil</option>
+              <option value="100k a 300k">R$ 100 mil a R$ 300 mil</option>
+              <option value="Acima de 300k">Acima de R$ 300 mil</option>
+            </select>
+          </div>
+
+        </div>
+
+        <button class="submit" type="submit">Acessar planilha</button>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2026 CAIS Investimentos. Todos os direitos reservados.
+  </div>
+</footer>
+
+</body>
+</html>
